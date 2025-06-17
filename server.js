@@ -19,7 +19,7 @@ app.use(
 );
 app.use(helmet.frameguard({ action: "deny" }));
 
-// GET /profile - shows user's name, level, and badges
+// all of my routes
 app.get("/profile", (req, res) => {
   res.set("Cache-Control", "no-store");
   res.json({
@@ -30,7 +30,6 @@ app.get("/profile", (req, res) => {
   });
 });
 
-// GET /inventory - shows user's collected items
 app.get("/inventory", (req, res) => {
   res.set("Cache-Control", "no-store");
   res.json({
@@ -42,7 +41,6 @@ app.get("/inventory", (req, res) => {
   });
 });
 
-// GET /quests - shows a list of active quests
 app.get("/quests", (req, res) => {
   res.set("Cache-Control", "public, max-age=300, stale-while-revalidate=300");
   res.json([
@@ -52,7 +50,6 @@ app.get("/quests", (req, res) => {
   ]);
 });
 
-// GET /guilds - shows guilds user can join or is part of
 app.get("/guilds", (req, res) => {
   res.set("Cache-Control", "public, max-age=600");
   res.json([
@@ -61,7 +58,6 @@ app.get("/guilds", (req, res) => {
   ]);
 });
 
-// GET /store - shows items available for purchase
 app.get("/store", (req, res) => {
   res.set("Cache-Control", "public, max-age=300");
   res.json([

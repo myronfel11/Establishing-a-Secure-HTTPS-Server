@@ -12,10 +12,12 @@
 
 ## CACHING STRATEGIES
 
-1.
+1. certain routes have a age of 300 (5 minutes)
+2. certain routes have an age of 600 (10 minutes)
+3. one of my routes has a stale-while-revalidate to help that route feel faster
 
 ## LESSONS LEAERNED
 
 1. how to use helmet
 2. inputting the certifacte keys
-3.
+3. how to read cert keys
