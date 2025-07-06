@@ -3,8 +3,43 @@ const fs = require("fs");
 const https = require("https");
 const helmet = require("helmet");
 const path = require("path");
-
+const argon2 = require("argon2");
 const app = express();
+
+app.use(express.json());
+
+const users = [];
+
+// phase 2 register & login
+app.post("/register", async (req, res) => {
+  const { username, password } = req.body;
+
+  try {
+    const hash = await argon2.hash(password);
+
+    users.push({ username, password: hash });
+
+    res.status(201).json({ message: "User registered successfully" });
+  } catch (err) {
+    res.status(500).json({ error: "Registration failed" });
+  }
+});
+
+app.post("/login", async (req, res) => {
+  const { username, password } = req.body;
+  const user = users.find((u) => u.username === username);
+
+  if (!user) return res.status(400).json({ error: "User not found" });
+
+  try {
+    const valid = await argon2.verify(user.password, password);
+    if (!valid) return res.status(401).json({ error: "Invalid password" });
+
+    res.json({ message: "Login successful" });
+  } catch (err) {
+    res.status(500).json({ error: "Login failed" });
+  }
+});
 
 // Helmet setup
 app.use(helmet());
@@ -20,6 +55,7 @@ app.use(
 app.use(helmet.frameguard({ action: "deny" }));
 
 // all of my routes
+
 app.get("/profile", (req, res) => {
   res.set("Cache-Control", "no-store");
   res.json({

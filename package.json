@@ -12,7 +12,10 @@
   "type": "commonjs",
   "description": "",
   "dependencies": {
+    "argon2": "^0.43.0",
+    "body-parser": "^2.2.0",
     "express": "^5.1.0",
-    "helmet": "^8.1.0"
+    "helmet": "^8.1.0",
+    "mongoose": "^8.16.1"
   }
 }

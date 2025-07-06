@@ -1,3 +1,7 @@
+## HOW TO START THE SERVER
+
+- node app.js
+
 ## SETUP INSTRUCTIONS
 
 1. Must have node.js
@@ -21,3 +25,8 @@
 1. how to use helmet
 2. inputting the certifacte keys
 3. how to read cert keys
+
+## PHASE 2
+
+1. install argon2, mongoose, body-parser (npm install express argon2 mongoose body-parser)
+2.
