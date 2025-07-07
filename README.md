@@ -29,4 +29,7 @@
 ## PHASE 2
 
 1. install argon2, mongoose, body-parser (npm install express argon2 mongoose body-parser)
-2.
+2. install passport for google SSO (npm install passport passport-google-oauth20 express-session)
+3. use env files (npm install dotenv)
+4. instal dependencies for JWT's (npm install jsonwebtoken, npm install cookie-parser)
+5. install csurf (npm install csurf cookie-parser)
