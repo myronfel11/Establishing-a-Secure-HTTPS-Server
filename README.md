@@ -28,14 +28,6 @@
 
 ## PHASE 2
 
-## DEPENDENCIES
-
-1. install argon2, mongoose, body-parser (npm install express argon2 mongoose body-parser)
-2. install passport for google SSO (npm install passport passport-google-oauth20 express-session)
-3. use env files (npm install dotenv)
-4. instal dependencies for JWT's (npm install jsonwebtoken, npm install cookie-parser)
-5. install csurf (npm install csurf cookie-parser)
-
 ## HOW TO RUN
 
 1. in the url type https://localhost:3000/auth/google to log in
@@ -62,8 +54,24 @@ admin - access all user data and admin only routes
 
 ## DEPENDENCIES
 
-1. install ejs2 (npm install ejs)
-2. install validator and html escapor (npm install express-validator escape-html)
+1. install argon2, mongoose, body-parser
+   (npm install express argon2 mongoose body-parser)
+2. install passport for google SSO
+   (npm install passport passport-google-oauth20 express-session)
+3. use env files
+   (npm install dotenv)
+4. instal dependencies for JWT's
+   (npm install jsonwebtoken, npm install cookie-parser)
+5. install csurf
+   (npm install csurf cookie-parser)
+6. install ejs2
+   (npm install ejs)
+7. install validator and html escapor
+   (npm install express-validator escape-html)
+
+# Ease of Use
+
+npm install express argon2 mongoose body-parser dotenv ejs passport passport-google-oauth20 express-session jsonwebtoken cookie-parser csurf express-validator escape-html
 
 ## HOW TO RUN
 
@@ -77,6 +85,14 @@ admin - access all user data and admin only routes
 ## PART C
 
 4 high severity vulnerabilities
+
+## PART D
+
+## PART E
+
+I use express-validator to make sure all inputs are safe and correct
+I use escape-html to prevent stored XSS when rendering user content like name, email, and bio in EJS
+I used Node's crypto faeture
 
 ## HOW TO CLONE REPOSITORY
 
